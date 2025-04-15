@@ -1,0 +1,20 @@
+.heroContainer{
+  background-color: #212844;
+  height: 400px;
+  margin-top: 20px;
+  border-radius: 30px;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.heroText,.heroImg{
+    flex: 1;    
+}
+.heroText{
+    padding-left: 120px;
+}
+.heroImage{
+    margin-right: 300px;
+}
