@@ -1,6 +1,5 @@
 import styles from "./SignIn.module.scss"
 import signupimg from "../../assets/dl.beatsnoop 1.png";
-import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
 export type formProps = {
@@ -8,7 +7,7 @@ export type formProps = {
     password: string
 }
 const SignIn = () => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const {
         register,
         handleSubmit,
