@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const handleLogOut=()=>{
@@ -22,8 +23,8 @@ const Navbar = () => {
             Profile
           </a>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="/signup">Sign Up</a></li>
-            <li><a className="dropdown-item" href="/signin">Sign In</a></li>
+            <Link className="dropdown-item" to="/signup">Sign Up</Link>
+            <Link className="dropdown-item" to="/signin">Sign In</Link>
             <li><hr className="dropdown-divider"/></li>
             <li><a className="dropdown-item" onClick={handleLogOut}>Sign Out</a></li>
           </ul>
