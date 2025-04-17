@@ -3,7 +3,8 @@ import Layout from './Layout';
 import Home from './components/home/Home';
 import SignUp from './components/signup/SignUp';
 import SignIn from './components/signin/SignIn';
-import ProductForm from './components/product/createProduct/productForm';
+import ProtectedRoute from './routes/ProtectedRoute';
+import ProductForm from './components/product/createProduct/ProductForm';
 
 
 function App() {
@@ -14,7 +15,26 @@ function App() {
           <Route index element={<Home />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="signin" element={<SignIn />} />
-          <Route path="admin/create-product" element={<ProductForm/>} />
+           {/* User Route */}
+        {/* <Route
+          path="/user"
+          element={
+            <ProtectedRoute allowedRoles={['user']}>
+              <UserDashboard />
+            </ProtectedRoute>
+          }
+        /> */}
+
+        {/* Admin Route */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute allowedRoles={['admin']}>
+            <ProductForm/>
+            </ProtectedRoute>
+          }
+        />
+          {/* <Route path="admin/create-product" element={<ProductForm/>} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
