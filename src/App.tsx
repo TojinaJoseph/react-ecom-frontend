@@ -9,7 +9,7 @@ import ProductForm from './components/product/createProduct/ProductForm';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/react-ecom-frontend/">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
