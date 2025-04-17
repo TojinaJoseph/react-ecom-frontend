@@ -9,7 +9,7 @@ const Footer = () => {
         <div className={styles.footerLinks}>
           <div className={styles.footerlink}>
             <div className={styles.contactUs}>
-              <h1>MegaMart</h1> <br/>
+              <h1>Mega Mart</h1> <br/>
               <ul>
                 <li><div className={styles.info}>
                      <img width={15} src={watsapp}/>
