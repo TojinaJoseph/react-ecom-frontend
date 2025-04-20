@@ -26,7 +26,7 @@ jobs:
         
       - name: Configure Git identity
         run: |
-          git config user.name "tojinajoseph"
+          git config user.name "Tojinajoseph"
           git config user.email "tojinajoseph123@gmail.com"
 
       - name: Deploy to GitHub Pages
