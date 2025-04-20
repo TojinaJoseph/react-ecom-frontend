@@ -24,11 +24,6 @@ jobs:
       - name: Build
         run: npm run build
         
-      - name: Configure Git identity
-        run: |
-          git config user.name "TOJINAJOSEPH"
-          git config user.email "tojinajoseph123@gmail.com"
-
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
