@@ -17,7 +17,9 @@ const Electronics = () => {
   const [electronics, setElectronics] = useState<electronicsItems[] | []>([]);
   const token = localStorage.getItem('accessToken');
   useEffect(() => {
-    api.get('http://localhost:3000/products?limit=5&category=Electronics', {
+    // api.get('http://localhost:3000/products?limit=5&category=Electronics', {
+      api.get('https://nestjs-ecom-api.onrender.com/products?limit=5&category=Electronics', {
+
       headers: {
         Authorization: `Bearer ${token}`,
       },

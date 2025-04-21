@@ -3,7 +3,7 @@ import { jwtDecode } from 'jwt-decode';
 
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://nestjs-ecom-api.onrender.com',
   withCredentials: true // Send cookies (for refresh token)
 });
 
@@ -21,7 +21,7 @@ const isTokenExpired = (token: string): boolean => {
 // Get new access token using refresh token
 const refreshAccessToken = async (): Promise<string | null> => {
   try {
-    const response = await axios.post('http://localhost:3000/auth/refresh-tokens', {}, {
+    const response = await axios.post('https://nestjs-ecom-api.onrender.com/auth/refresh-tokens', {}, {
       withCredentials: true
     });
     const newToken = response.data.accessToken;
