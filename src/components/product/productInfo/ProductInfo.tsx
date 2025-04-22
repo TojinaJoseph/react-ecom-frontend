@@ -7,14 +7,12 @@ export const ProductInfo = () => {
     const token = localStorage.getItem('accessToken');
     useEffect(()=>{
         api.get(`https://nestjs-ecom.onrender.com/products/${id}`, {
-            // api.get('https://nestjs-ecom-api.onrender.com/products?limit=5&category=Electronics', {
-      
             headers: {
               Authorization: `Bearer ${token}`,
             },
           })
             .then(({ data }) => {
-              console.log(data.data.data);
+              console.log(data.data);
               
             })
             .catch((error) => {
