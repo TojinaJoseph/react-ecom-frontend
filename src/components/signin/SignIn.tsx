@@ -2,12 +2,14 @@ import styles from "./SignIn.module.scss"
 import signupimg from "../../assets/dl.beatsnoop 1.png";
 import { SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
+import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from "react-router-dom";
 export type formProps = {
     email: string,
     password: string
 }
 const SignIn = () => {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -27,6 +29,15 @@ const SignIn = () => {
                  // Save to localStorage (or cookies)
     localStorage.setItem('accessToken', accessToken);
     localStorage.setItem('refreshToken', refreshToken);
+    const decoded: any= jwtDecode(accessToken);
+    console.log(decoded.role)
+    const role = decoded.role;
+
+    if (role === "admin") {
+      navigate("/admin");
+    } else {
+      navigate("/");
+    }
                 // navigate("/signin");
             })
             .catch((error) => {
