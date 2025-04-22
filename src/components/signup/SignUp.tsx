@@ -26,7 +26,7 @@ const SignUp = () => {
             password: data.password,
             role:"user"
         }
-        axios.post('https://nestjs-ecom-api.onrender.com/users',formData )
+        axios.post('https://nestjs-ecom.onrender.com/users',formData )
             .then(() => {    
                 alert("User created successfully");
                 reset()

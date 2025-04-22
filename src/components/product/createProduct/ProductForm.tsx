@@ -40,7 +40,7 @@ const ProductForm = () => {
     data.rate&&formData.append('rate', data.rate.toString());
     formData.append('image', data.image[0]); // ✅ Send actual file
 
-    api.post('https://nestjs-ecom-api.onrender.com/products',formData,{
+    api.post('https://nestjs-ecom.onrender.com/products',formData,{
       headers: {
         Authorization: `Bearer ${token}`,
       },
