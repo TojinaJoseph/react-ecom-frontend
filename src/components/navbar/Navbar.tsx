@@ -4,6 +4,7 @@ const Navbar = () => {
     const handleLogOut=()=>{
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
+        localStorage.removeItem('role');
     }
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary px-xxl-5">
