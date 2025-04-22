@@ -32,8 +32,8 @@ const SignIn = () => {
     const decoded: any= jwtDecode(accessToken);
     console.log(decoded.role)
     const role = decoded.role;
-
-    if (role === "admin") {
+    localStorage.setItem('role', role);
+    if (localStorage.getItem(role) === "admin") {
       navigate("/admin");
     } else {
       navigate("/");
