@@ -9,7 +9,6 @@ interface ProtectedRouteProps {
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles }) => {
   const role = getUserRole();
-   console.log('role',role)
   if (!role) {
     return <Navigate to="/signin" replace />;
   }

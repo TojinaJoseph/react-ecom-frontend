@@ -5,6 +5,7 @@ import SignUp from './components/signup/SignUp';
 import SignIn from './components/signin/SignIn';
 import ProtectedRoute from './routes/ProtectedRoute';
 import ProductForm from './components/product/createProduct/ProductForm';
+import { ProductInfo } from './components/product/productInfo/ProductInfo';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="signin" element={<SignIn />} />
+          <Route path="product/:id" element={<ProductInfo />} />
            {/* User Route */}
         {/* <Route
           path="/user"
