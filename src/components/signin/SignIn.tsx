@@ -21,24 +21,21 @@ const SignIn = () => {
             email: data.email,
             password: data.password
         }
-        axios.post('https://nestjs-ecom.onrender.com/auth/sign-in',formData )
-            .then(({data}) => {    
+        axios.post('https://nestjs-ecom.onrender.com/auth/sign-in', formData)
+            .then(({ data }) => {
                 reset()
-                const {accessToken,refreshToken}=data.data;
-                console.log(accessToken)
-                 // Save to localStorage (or cookies)
-    localStorage.setItem('accessToken', accessToken);
-    localStorage.setItem('refreshToken', refreshToken);
-    const decoded: any= jwtDecode(accessToken);
-    console.log(decoded.role)
-    const role = decoded.role;
-    localStorage.setItem('role', role);
-    if (localStorage.getItem(role) === "admin") {
-      navigate("/admin");
-    } else {
-      navigate("/");
-    }
-                // navigate("/signin");
+                const { accessToken, refreshToken } = data.data;
+                // Save to localStorage (or cookies)
+                localStorage.setItem('accessToken', accessToken);
+                localStorage.setItem('refreshToken', refreshToken);
+                const decoded: any = jwtDecode(accessToken);
+                const role = decoded.role;
+                localStorage.setItem('role', role);
+                if (role === "admin") {
+                    navigate("/admin");
+                } else {
+                    navigate("/");
+                }
             })
             .catch((error) => {
                 alert(error.response?.data?.message)

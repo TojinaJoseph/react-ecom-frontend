@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
 import Home from './components/home/Home';
 import SignUp from './components/signup/SignUp';
@@ -9,7 +9,7 @@ import ProductForm from './components/product/createProduct/ProductForm';
 
 function App() {
   return (
-    <Router>
+    <Router basename='/react-ecom-frontend/'>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
