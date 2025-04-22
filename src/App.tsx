@@ -27,7 +27,7 @@ function App() {
 
         {/* Admin Route */}
         <Route
-          path="/admin"
+          path="admin"
           element={
             <ProtectedRoute allowedRoles={['admin']}>
             <ProductForm/>
