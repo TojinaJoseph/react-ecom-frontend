@@ -17,17 +17,6 @@ function App() {
           <Route path="signup" element={<SignUp />} />
           <Route path="signin" element={<SignIn />} />
           <Route path="product/:id" element={<ProductInfo />} />
-           {/* User Route */}
-        {/* <Route
-          path="/user"
-          element={
-            <ProtectedRoute allowedRoles={['user']}>
-              <UserDashboard />
-            </ProtectedRoute>
-          }
-        /> */}
-
-        {/* Admin Route */}
         <Route
           path="admin"
           element={
@@ -36,7 +25,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-          {/* <Route path="admin/create-product" element={<ProductForm/>} /> */}
         </Route>
       </Routes>
     </Router>
