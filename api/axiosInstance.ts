@@ -25,7 +25,7 @@ const refreshAccessToken = async (): Promise<string | null> => {
     const response = await axios.post('https://nestjs-ecom.onrender.com/auth/refresh-tokens', {refreshToken}, {
       withCredentials: true
     });
-    const newToken = response.data.accessToken;
+    const newToken = response.data.data.accessToken;
     localStorage.setItem('accessToken', newToken);
     return newToken;
   } catch (error) {
@@ -40,6 +40,9 @@ api.interceptors.request.use(
   async (config) => {
     let token = localStorage.getItem('accessToken');
 
+    if (!token) {
+      return Promise.reject(new Error('No access token found'));
+    }
     if (token && isTokenExpired(token)) {
       token = await refreshAccessToken();
     }

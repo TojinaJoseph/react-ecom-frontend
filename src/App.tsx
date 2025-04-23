@@ -6,6 +6,7 @@ import SignIn from './components/signin/SignIn';
 import ProtectedRoute from './routes/ProtectedRoute';
 import ProductForm from './components/product/createProduct/ProductForm';
 import { ProductInfo } from './components/product/productInfo/ProductInfo';
+import Cart from './components/cart/Cart';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="signup" element={<SignUp />} />
           <Route path="signin" element={<SignIn />} />
           <Route path="product/:id" element={<ProductInfo />} />
+          <Route path="cart/:id" element={<Cart/>} />
         <Route
           path="admin"
           element={

@@ -38,7 +38,7 @@ const ProductForm = () => {
     formData.append('category', data.category);
     formData.append('slug', data.slug);
     data.rate&&formData.append('rate', data.rate.toString());
-    formData.append('image', data.image[0]); // ✅ Send actual file
+    formData.append('image', data.image[0]); //  Send actual file
 
     api.post('https://nestjs-ecom.onrender.com/products',formData,{
       headers: {
