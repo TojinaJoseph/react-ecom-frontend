@@ -20,8 +20,9 @@ const isTokenExpired = (token: string): boolean => {
 
 // Get new access token using refresh token
 const refreshAccessToken = async (): Promise<string | null> => {
+  const refreshToken=localStorage.getItem('refreshToken')
   try {
-    const response = await axios.post('https://nestjs-ecom.onrender.com/auth/refresh-tokens', {}, {
+    const response = await axios.post('https://nestjs-ecom.onrender.com/auth/refresh-tokens', {refreshToken}, {
       withCredentials: true
     });
     const newToken = response.data.accessToken;
