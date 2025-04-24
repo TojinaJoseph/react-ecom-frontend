@@ -51,7 +51,7 @@ export const ProductInfo = () => {
         <div className="row">
           <div className="col-md-4">
             <div>
-              <img src={product?.featuredImageUrl}/>
+              <img src={product?.featuredImageUrl} className="img-fluid"/>
             </div>
           </div>
           <div className="col-md-8">
