@@ -38,11 +38,12 @@ const SignUp = () => {
             });
     }
   return (
-    <div className={styles.signupContainer}>
-        <div className="img ">
-         <img src={signupimg}/>
+    <div className={`container ${styles.signupContainer}`}>
+        <div className="row g-5 mt-3">
+        <div className="col-md-6 d-flex justify-content-center align-items-center">
+         <img src={signupimg} className="img-fluid"/>
         </div>
-        <div className={styles.form}>
+        <div className={`col-md-6 d-flex justify-content-center align-items-center ${styles.form}`}>
         <form onSubmit={handleSubmit(onSubmit)}>
             <h3>Create an account</h3><br/>
             <div className="mb-3">
@@ -78,6 +79,8 @@ const SignUp = () => {
   <button type="submit" className="btn btn-primary w-100">Create Account</button>
 </form>
         </div>
+        </div>
+       
     </div>
   )
 }

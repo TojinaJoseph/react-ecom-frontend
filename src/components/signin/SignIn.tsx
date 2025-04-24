@@ -44,11 +44,12 @@ const SignIn = () => {
     }
 
     return (
-        <div className={styles.signinContainer}>
-            <div className="img ">
-                <img src={signupimg} />
+        <div className={`container ${styles.signinContainer}`}>
+            <div className="row g-5 mt-3">
+            <div className={`col-md-6 d-flex justify-content-center align-items-center ${styles.img}`}>
+                <img src={signupimg} className="img-fluid"/>
             </div>
-            <div className={styles.form}>
+            <div className={`col-md-6 d-flex justify-content-center align-items-center ${styles.form}`}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <h3>Log In to MegaMart</h3><br />
 
@@ -75,6 +76,7 @@ const SignIn = () => {
                     </div>
                     <button type="submit" className="btn btn-primary">Log In</button>
                 </form>
+            </div>
             </div>
         </div>
     )

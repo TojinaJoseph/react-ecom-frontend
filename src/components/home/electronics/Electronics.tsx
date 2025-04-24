@@ -1,7 +1,7 @@
 import styles from "./electronics.module.scss";
 import { useEffect, useState } from "react";
-import api from "../../../../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export interface electronicsItems {
   category: string;
@@ -23,7 +23,7 @@ const Electronics = () => {
   }
   useEffect(() => {
     // api.get('http://localhost:3000/products?limit=5&category=Electronics', {
-      api.get('https://nestjs-ecom.onrender.com/products?limit=5&category=Electronics', {
+      axios.get('https://nestjs-ecom.onrender.com/products?limit=5&category=Electronics', {
 
       headers: {
         Authorization: `Bearer ${token}`,
@@ -38,12 +38,12 @@ const Electronics = () => {
       });
   }, [])
   return (
-    <div className={styles.electronicsContainer}>
+    <div className={`container mt-5 ${styles.electronicsContainer}`}>
       <p>Top deals on <span className="text-primary">Electronics</span></p> <hr />
-      <div className={styles.fiveBoxContainer}>
+      <div className="row gap-3 justify-content-center">
         {electronics.map((i) => (
-          <div className={styles.box} key={i.id} onClick={()=>handleNavigation(i.id)}>
-            <div className={styles.img}><img src={i.featuredImageUrl} /></div>
+          <div className={`col-12 col-md-6 col-lg-3 col-xl-2 mb-4 border p-2 text-center ${styles.box}`} key={i.id} onClick={()=>handleNavigation(i.id)}>
+            <div className={styles.img}><img src={i.featuredImageUrl} className="img-fluid"/></div>
             <div className={styles.desc}>
               <h6>{i.title}</h6>
               <p>Rs. {i.price}</p>
