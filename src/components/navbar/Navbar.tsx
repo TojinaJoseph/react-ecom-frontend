@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import cart from "../../assets/cart-shopping-svgrepo-com.svg";
 import profile from "../../assets/profile-circle-svgrepo-com.svg";
+import styles from "./Navbar.module.scss";
 import { jwtDecode } from "jwt-decode";
 const Navbar = () => {
   const access=localStorage.getItem('accessToken');
@@ -34,8 +35,7 @@ const Navbar = () => {
         <li className="nav-item">
           <Link className="nav-link active" to="/">Home</Link>
         </li>
-        {!userRole && 
-       
+        {!userRole &&      
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Profile
@@ -45,8 +45,7 @@ const Navbar = () => {
            <Link className="dropdown-item" to="/signin">Sign In</Link>
            <li><hr className="dropdown-divider"/></li>
            <li><a className="dropdown-item" onClick={handleLogOut}>Sign Out</a></li>
-         </ul>
-         
+         </ul>        
         </li>}
        
       </ul>
@@ -63,11 +62,8 @@ const Navbar = () => {
       // <img src={profile} width={30}/>
       
 <div className="dropdown">
-  
-  {/* <button className="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> */}
-  <img src={profile} width={30} data-bs-toggle="dropdown" aria-expanded="false"/>
-  {/* </button> */}
-  <ul className="dropdown-menu dropdown-menu-end mt-3">
+  <img src={profile} width={30} data-bs-toggle="dropdown" aria-expanded="false" role="button" className="dropdown-toggle"/>
+  <ul className={`dropdown-menu dropdown-menu-end dropdown-menu-xs-start mt-2 ${styles.customDropdown}`}>
     <li><a className="dropdown-item" href="#">Profile</a></li>
     <li><a className="dropdown-item" onClick={handleLogOut}>Sign out</a></li>
   </ul>

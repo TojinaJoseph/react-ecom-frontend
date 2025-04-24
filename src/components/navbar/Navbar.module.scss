@@ -1,0 +1,12 @@
+.customDropdown {
+    right: 0;
+    left: auto;
+    min-width: 150px;
+  }
+  
+  @media (max-width: 576px) {
+    .customDropdown {
+      right: auto !important;
+      left: 0 !important;
+    }
+  }
