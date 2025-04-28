@@ -42,7 +42,7 @@ const Electronics = () => {
       <p>Top deals on <span className="text-primary">Electronics</span></p> <hr />
       <div className="row gap-3 justify-content-center">
         {electronics.map((i) => (
-          <div className={`col-12 col-md-6 col-lg-3 col-xl-2 mb-4 border p-2 text-center ${styles.box}`} key={i.id} onClick={()=>handleNavigation(i.id)}>
+          <div className={`col-12 col-md-6 col-lg-3 col-xl-2 border text-center ${styles.box}`} key={i.id} onClick={()=>handleNavigation(i.id)}>
             <div className={styles.img}><img src={i.featuredImageUrl} className="img-fluid"/></div>
             <div className={styles.desc}>
               <h6>{i.title}</h6>
