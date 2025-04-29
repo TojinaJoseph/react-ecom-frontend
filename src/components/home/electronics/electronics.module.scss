@@ -1,43 +1,32 @@
-.electronicsContainer{
-    // margin-top: 50px;
-    .fiveBoxContainer {
-      // display: flex;
-      // width: 100%;
-      // gap: 10px;
+.electronicsContainer {
 
-      .box {
-        // flex: 1;                  /* Equal width for all 5 boxes */
-        /* padding: 20px; */
-        // text-align: center;
-        
-        border: 1px solid #aaa;
-        /* Group 25 */
-    
-    /* position: absolute; */
-    // width: 227px;
-    // height: 280px;
-    // left: 120px;
-    // top: 742px;
-    .img{
-      background-color: #F5F5F5;
-      height: 189px;
-      img{
-        // width: 200px;
-        // height: 166px;
+  .fiveBoxContainer {
+
+
+    .box {
+
+      width: 220px;
+      min-height: 320px;
+      border: 1px solid #aaa;
+
+      .img {
+        background-color: #F5F5F5;
+        width: 200px;
+        height: 200px;
+
+        img {}
+      }
+
+      .desc {
+        padding: 20px;
       }
     }
-    .desc{
-      padding: 20px;
-      width: 225px;
-      height: 106px;
-    }
-      }
-     
-     
-      
-      
-    }
-    
-   
-  
+
+
+
+
+  }
+
+
+
 }

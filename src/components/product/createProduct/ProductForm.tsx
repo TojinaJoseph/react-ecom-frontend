@@ -48,7 +48,7 @@ const ProductForm = () => {
         .then(() => {    
             alert("Product created successfully");
             reset()
-            navigate("/");
+            // navigate("/");
         })
         .catch((error) => {
             alert(error.response?.data?.message)

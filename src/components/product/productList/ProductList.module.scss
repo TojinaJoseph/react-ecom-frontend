@@ -1,0 +1,20 @@
+.productWrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    .product{
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        text-align: center;
+        color: black;
+        text-decoration: none;
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
