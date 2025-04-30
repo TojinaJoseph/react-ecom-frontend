@@ -1,17 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
 import { electronicsItems } from "../../home/electronics/Electronics";
 import styles from "./ProductList.module.scss"
 
 const ProductList = () => {
     const {category}=useParams();
-    const navigate=useNavigate()
     const [products, setProducts] = useState<electronicsItems[] | []>([]);
     const token = localStorage.getItem('accessToken');
-    const handleNavigation=(id:number)=>{
-        navigate(`product/${id}`,{ replace: true });
-      }
     useEffect(() => {
         // api.get('http://localhost:3000/products?limit=5&category=Electronics', {
           axios.get(`https://nestjs-ecom.onrender.com/products?category=${category}`, {

@@ -1,6 +1,5 @@
 
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import styles from "./productForm.module.scss"
 import { useEffect } from "react";
 import api from "../../../../api/axiosInstance";
@@ -16,7 +15,6 @@ export type formProps = {
 } 
 const ProductForm = () => {
   const token = localStorage.getItem('accessToken');
-  const navigate=useNavigate()
   const {
       register,
       handleSubmit,
